@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/continue_image.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/start_image.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/options_image.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/controls_image.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/exit_image.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/FREELAH.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Sprites/controls.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/back_image.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 8 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 140.0
+margin_top = 162.0
+margin_right = 540.0
+margin_bottom = 868.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 400.0
+margin_bottom = 706.0
+
+[node name="Continue" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+visible = false
+margin_right = 400.0
+margin_bottom = 138.0
+texture_normal = ExtResource( 3 )
+
+[node name="Start" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 138.0
+texture_normal = ExtResource( 4 )
+
+[node name="Options" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_top = 142.0
+margin_right = 400.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 5 )
+
+[node name="Controls" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_top = 284.0
+margin_right = 400.0
+margin_bottom = 422.0
+texture_normal = ExtResource( 6 )
+
+[node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_top = 426.0
+margin_right = 400.0
+margin_bottom = 564.0
+texture_normal = ExtResource( 7 )
+
+[node name="BlockCrasher" type="Label" parent="."]
+margin_left = 54.0
+margin_top = 70.0
+margin_right = 624.751
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "blockcrasher"
+align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MadeBy" type="Label" parent="."]
+margin_left = 592.0
+margin_top = 870.0
+margin_right = 662.0
+margin_bottom = 900.0
+text = "Made by:
+PlainCrown"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ControlsPage" type="TextureRect" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ControlsExit" type="TextureButton" parent="."]
+visible = false
+margin_left = 140.0
+margin_top = 730.0
+margin_right = 540.0
+margin_bottom = 868.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="ControlsExit" to="." method="_on_ControlsExit_pressed"]

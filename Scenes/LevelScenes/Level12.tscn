@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/MidBrick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/StrongBrick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/StrongerBrick.tscn" type="PackedScene" id=4]
+
+[node name="Level12" index="0" instance=ExtResource( 1 )]
+
+[node name="Ball" parent="." index="3"]
+next_level = "res://Scenes/LevelScenes/Level13.tscn"
+
+[node name="MidBrick" parent="MidBrickHolder" index="0" instance=ExtResource( 2 )]
+position = Vector2( 120, 410 )
+
+[node name="MidBrick2" parent="MidBrickHolder" index="1" instance=ExtResource( 2 )]
+position = Vector2( 560, 410 )
+
+[node name="MidBrick3" parent="MidBrickHolder" index="2" instance=ExtResource( 2 )]
+position = Vector2( 624, 410 )
+
+[node name="MidBrick4" parent="MidBrickHolder" index="3" instance=ExtResource( 2 )]
+position = Vector2( 496, 410 )
+
+[node name="MidBrick5" parent="MidBrickHolder" index="4" instance=ExtResource( 2 )]
+position = Vector2( 184, 410 )
+
+[node name="MidBrick6" parent="MidBrickHolder" index="5" instance=ExtResource( 2 )]
+position = Vector2( 56, 410 )
+
+[node name="MidBrick7" parent="MidBrickHolder" index="6" instance=ExtResource( 2 )]
+position = Vector2( 120, 510 )
+
+[node name="MidBrick8" parent="MidBrickHolder" index="7" instance=ExtResource( 2 )]
+position = Vector2( 184, 510 )
+
+[node name="MidBrick9" parent="MidBrickHolder" index="8" instance=ExtResource( 2 )]
+position = Vector2( 56, 510 )
+
+[node name="MidBrick10" parent="MidBrickHolder" index="9" instance=ExtResource( 2 )]
+position = Vector2( 560, 510 )
+
+[node name="MidBrick11" parent="MidBrickHolder" index="10" instance=ExtResource( 2 )]
+position = Vector2( 624, 510 )
+
+[node name="MidBrick12" parent="MidBrickHolder" index="11" instance=ExtResource( 2 )]
+position = Vector2( 496, 510 )
+
+[node name="StrongBrick" parent="StrongBrickHolder" index="0" instance=ExtResource( 3 )]
+position = Vector2( 340, 360 )
+
+[node name="StrongBrick2" parent="StrongBrickHolder" index="1" instance=ExtResource( 3 )]
+position = Vector2( 404, 360 )
+
+[node name="StrongBrick3" parent="StrongBrickHolder" index="2" instance=ExtResource( 3 )]
+position = Vector2( 276, 360 )
+
+[node name="StrongBrick4" parent="StrongBrickHolder" index="3" instance=ExtResource( 3 )]
+position = Vector2( 340, 560 )
+
+[node name="StrongBrick5" parent="StrongBrickHolder" index="4" instance=ExtResource( 3 )]
+position = Vector2( 404, 560 )
+
+[node name="StrongBrick6" parent="StrongBrickHolder" index="5" instance=ExtResource( 3 )]
+position = Vector2( 276, 560 )
+
+[node name="StrongerBrick" parent="StrongerBrickHolder" index="0" instance=ExtResource( 4 )]
+position = Vector2( 340, 460 )
+
+[node name="StrongerBrick2" parent="StrongerBrickHolder" index="1" instance=ExtResource( 4 )]
+position = Vector2( 404, 460 )
+
+[node name="StrongerBrick3" parent="StrongerBrickHolder" index="2" instance=ExtResource( 4 )]
+position = Vector2( 276, 460 )
+
+[node name="StrongerBrick4" parent="StrongerBrickHolder" index="3" instance=ExtResource( 4 )]
+position = Vector2( 148, 624 )
+
+[node name="StrongerBrick5" parent="StrongerBrickHolder" index="4" instance=ExtResource( 4 )]
+position = Vector2( 532, 624 )
+
+[node name="StrongerBrick6" parent="StrongerBrickHolder" index="5" instance=ExtResource( 4 )]
+position = Vector2( 212, 328 )
+
+[node name="StrongerBrick7" parent="StrongerBrickHolder" index="6" instance=ExtResource( 4 )]
+position = Vector2( 468, 328 )
+
+[node name="StrongerBrick8" parent="StrongerBrickHolder" index="7" instance=ExtResource( 4 )]
+position = Vector2( 468, 592 )
+
+[node name="StrongerBrick9" parent="StrongerBrickHolder" index="8" instance=ExtResource( 4 )]
+position = Vector2( 340, 328 )
+
+[node name="StrongerBrick10" parent="StrongerBrickHolder" index="9" instance=ExtResource( 4 )]
+position = Vector2( 532, 296 )
+
+[node name="StrongerBrick11" parent="StrongerBrickHolder" index="10" instance=ExtResource( 4 )]
+position = Vector2( 212, 592 )
+
+[node name="StrongerBrick12" parent="StrongerBrickHolder" index="11" instance=ExtResource( 4 )]
+position = Vector2( 148, 296 )
+
+[node name="StrongerBrick13" parent="StrongerBrickHolder" index="12" instance=ExtResource( 4 )]
+position = Vector2( 340, 592 )
+
+[node name="PowerBoxSpawner" parent="." index="11"]
+old_ball = NodePath("../../Level12/Ball")
+
+[node name="UI" parent="." index="12"]
+ball = NodePath("../../Level12/Ball")

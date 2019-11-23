@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/brick.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/brick2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/power_indicator.png" type="Texture" id=3]
+[ext_resource path="res://Animations/SmallMove.anim" type="Animation" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "Weak",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Mid",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Move"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PowerIndicator:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.9, 0.9 ), Vector2( 0.8, 0.8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PowerIndicator:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -20.0, 20.0, -20.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 16 )
+
+[node name="MidBrick" type="StaticBody2D" groups=[
+"Brick",
+"MidBrick",
+]]
+collision_layer = 4
+collision_mask = 18
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BrickSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "Mid"
+
+[node name="PowerIndicator" type="Sprite" parent="."]
+visible = false
+rotation = 0.210269
+scale = Vector2( 0.680119, 0.680119 )
+texture = ExtResource( 3 )
+
+[node name="IndicatorAnimation" type="AnimationPlayer" parent="."]
+anims/Move = SubResource( 2 )
+anims/SmallMove = ExtResource( 4 )
+
+[node name="BrickCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )

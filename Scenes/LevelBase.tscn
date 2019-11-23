@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/background.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Paddle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/PowerBoxSpawner.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/FREELAH.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sound/collision.wav" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 84
+font_data = ExtResource( 6 )
+
+[node name="LevelBase" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 340, 460 )
+z_index = -2
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PaddleUp" parent="." instance=ExtResource( 2 )]
+position = Vector2( 340, 30 )
+rotation = 3.14159
+
+[node name="ResetPosition" type="Position2D" parent="PaddleUp"]
+position = Vector2( 340, 30 )
+
+[node name="PaddleDown" parent="." instance=ExtResource( 2 )]
+position = Vector2( 340, 890 )
+
+[node name="ResetPosition" type="Position2D" parent="PaddleDown"]
+position = Vector2( 340, 890 )
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 340, 864 )
+linear_velocity = Vector2( 80, -410 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="WallLeft" type="CollisionPolygon2D" parent="Wall"]
+polygon = PoolVector2Array( 0.0174637, 919.918, 0, 0, -64, 0, -63.9382, 919.813 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 744, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="WallRight" type="CollisionPolygon2D" parent="Wall2"]
+polygon = PoolVector2Array( 0.0174637, 919.918, 0, 0, -64, 0, -63.9382, 919.813 )
+
+[node name="WeakBrickHolder" type="Node2D" parent="."]
+
+[node name="MidBrickHolder" type="Node2D" parent="."]
+
+[node name="StrongBrickHolder" type="Node2D" parent="."]
+
+[node name="StrongerBrickHolder" type="Node2D" parent="."]
+
+[node name="StrongestBrickHolder" type="Node2D" parent="."]
+
+[node name="PowerBoxSpawner" type="Node2D" parent="."]
+script = ExtResource( 4 )
+old_ball = NodePath("../Ball")
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+rect_min_size = Vector2( 680, 920 )
+ball = NodePath("../Ball")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -600.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="ResetRequest" type="Label" parent="UI/MarginContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 680.0
+margin_bottom = 184.0
+custom_fonts/font = SubResource( 1 )
+text = "Press R to restart"
+align = 1
+
+[node name="GameComplete" type="Label" parent="UI"]
+visible = false
+margin_left = 16.0
+margin_top = 410.0
+margin_right = 660.0
+margin_bottom = 480.0
+custom_fonts/font = SubResource( 2 )
+text = "Game Complete"
+
+[node name="ResetTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+[connection signal="timeout" from="ResetTimer" to="PaddleDown" method="_on_ResetTimer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="PaddleUp" method="_on_ResetTimer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="UI" method="_on_ResetTimer_timeout"]

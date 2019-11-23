@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Ball.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/ball.png" type="Texture" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Ball" type="RigidBody2D" groups=[
+"Ball",
+]]
+collision_layer = 2
+collision_mask = 7
+mode = 2
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+contacts_reported = 2
+contact_monitor = true
+linear_velocity = Vector2( 80, -430 )
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BallSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="BallCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="BallTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true

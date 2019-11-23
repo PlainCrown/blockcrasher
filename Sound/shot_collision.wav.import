@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shot_collision.wav-28b8c544c4eac64e331a69ce5a4f7651.sample"
+
+[deps]
+
+source_file="res://Sound/shot_collision.wav"
+dest_files=[ "res://.import/shot_collision.wav-28b8c544c4eac64e331a69ce5a4f7651.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,315 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/LevelIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/back_image.png" type="Texture" id=4]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 620.0
+margin_bottom = 860.0
+rect_pivot_offset = Vector2( 390, 770 )
+custom_constants/separation = 126
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 620.0
+custom_constants/separation = 126
+
+[node name="1" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+locked = false
+level_number = 1
+level = "res://Scenes/LevelScenes/Level1.tscn"
+
+[node name="2" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_right = 126.0
+level_number = 2
+level = "res://Scenes/LevelScenes/Level2.tscn"
+
+[node name="3" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 252.0
+level_number = 3
+level = "res://Scenes/LevelScenes/Level3.tscn"
+
+[node name="4" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 378.0
+margin_right = 378.0
+level_number = 4
+level = "res://Scenes/LevelScenes/Level4.tscn"
+
+[node name="5" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 504.0
+level_number = 5
+level = "res://Scenes/LevelScenes/Level5.tscn"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 126.0
+margin_right = 620.0
+margin_bottom = 126.0
+custom_constants/separation = 126
+
+[node name="6" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+level_number = 6
+level = "res://Scenes/LevelScenes/Level6.tscn"
+
+[node name="7" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_right = 126.0
+level_number = 7
+level = "res://Scenes/LevelScenes/Level7.tscn"
+
+[node name="8" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 252.0
+level_number = 8
+level = "res://Scenes/LevelScenes/Level8.tscn"
+
+[node name="9" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 378.0
+margin_right = 378.0
+level_number = 9
+level = "res://Scenes/LevelScenes/Level9.tscn"
+
+[node name="10" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 504.0
+level_number = 10
+level = "res://Scenes/LevelScenes/Level10.tscn"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 252.0
+margin_right = 620.0
+margin_bottom = 252.0
+custom_constants/separation = 126
+
+[node name="11" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+level_number = 11
+level = "res://Scenes/LevelScenes/Level11.tscn"
+
+[node name="12" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_right = 126.0
+level_number = 12
+level = "res://Scenes/LevelScenes/Level12.tscn"
+
+[node name="13" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 252.0
+level_number = 13
+level = "res://Scenes/LevelScenes/Level13.tscn"
+
+[node name="14" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 378.0
+margin_right = 378.0
+level_number = 14
+level = "res://Scenes/LevelScenes/Level14.tscn"
+
+[node name="15" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 504.0
+level_number = 15
+level = "res://Scenes/LevelScenes/Level15.tscn"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 378.0
+margin_right = 620.0
+margin_bottom = 378.0
+custom_constants/separation = 126
+
+[node name="16" parent="MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+level_number = 16
+level = "res://Scenes/LevelScenes/Level16.tscn"
+
+[node name="17" parent="MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_right = 126.0
+level_number = 17
+level = "res://Scenes/LevelScenes/Level17.tscn"
+
+[node name="18" parent="MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 252.0
+level_number = 18
+level = "res://Scenes/LevelScenes/Level18.tscn"
+
+[node name="19" parent="MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 378.0
+margin_right = 378.0
+level_number = 19
+level = "res://Scenes/LevelScenes/Level19.tscn"
+
+[node name="20" parent="MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 504.0
+level_number = 20
+level = "res://Scenes/LevelScenes/Level20.tscn"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 504.0
+margin_right = 620.0
+margin_bottom = 504.0
+custom_constants/separation = 126
+
+[node name="21" parent="MarginContainer/VBoxContainer/HBoxContainer5" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+level_number = 21
+level = "res://Scenes/LevelScenes/Level21.tscn"
+
+[node name="22" parent="MarginContainer/VBoxContainer/HBoxContainer5" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_right = 126.0
+level_number = 22
+level = "res://Scenes/LevelScenes/Level22.tscn"
+
+[node name="23" parent="MarginContainer/VBoxContainer/HBoxContainer5" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 252.0
+level_number = 23
+level = "res://Scenes/LevelScenes/Level23.tscn"
+
+[node name="24" parent="MarginContainer/VBoxContainer/HBoxContainer5" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 378.0
+margin_right = 378.0
+level_number = 24
+level = "res://Scenes/LevelScenes/Level24.tscn"
+
+[node name="25" parent="MarginContainer/VBoxContainer/HBoxContainer5" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 504.0
+level_number = 25
+level = "res://Scenes/LevelScenes/Level25.tscn"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 630.0
+margin_right = 620.0
+margin_bottom = 630.0
+custom_constants/separation = 126
+
+[node name="26" parent="MarginContainer/VBoxContainer/HBoxContainer6" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+level_number = 26
+level = "res://Scenes/LevelScenes/Level26.tscn"
+
+[node name="27" parent="MarginContainer/VBoxContainer/HBoxContainer6" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_right = 126.0
+level_number = 27
+level = "res://Scenes/LevelScenes/Level27.tscn"
+
+[node name="28" parent="MarginContainer/VBoxContainer/HBoxContainer6" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 252.0
+level_number = 28
+level = "res://Scenes/LevelScenes/Level28.tscn"
+
+[node name="29" parent="MarginContainer/VBoxContainer/HBoxContainer6" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 378.0
+margin_right = 378.0
+level_number = 29
+level = "res://Scenes/LevelScenes/Level29.tscn"
+
+[node name="30" parent="MarginContainer/VBoxContainer/HBoxContainer6" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 504.0
+level_number = 30
+level = "res://Scenes/LevelScenes/Level30.tscn"
+
+[node name="ExitButton" type="TextureButton" parent="."]
+margin_left = 140.0
+margin_top = 779.0
+margin_right = 540.0
+margin_bottom = 917.0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
