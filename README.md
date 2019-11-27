@@ -10,7 +10,7 @@ This game has been finished and released on [Itch.io](https://plaincrown.itch.io
 * 7 power-ups to help or hinder your success
 * 2 paddles for double the stress
 
-# Contributions
+# Contributions:
 
 Anyone can contribute to BlockCrasher by playing the game and reporting any bugs they find in the comments section of the game page, or in the issues tab on GitHub. A good bug report should explain exactly how and when the bug occurred. It's difficult to fix a bug that cannot be re-created by following the same steps. Videos and screenshots also help.
 
