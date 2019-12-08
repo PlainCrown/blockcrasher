@@ -158,7 +158,7 @@ func speed_up() -> void:
 
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
-	"""Deletes the extra_ball if there is one while the original ball also exists
+	"""Deletes the extra_ball if there is one while the original ball also exists.
 	Then puts the only ball to sleep and resets its default values."""
 	if reset:
 		visible = false

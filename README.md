@@ -1,6 +1,6 @@
 ﻿# Description:
 
-A short and simple game heavily inspired by the classic breakout mechanics. Crash into blocks and complete increasingly challenging levels with the help of some power-ups. Made with the Godot Engine 3.1.
+A short and simple game based on the classic breakout mechanics. Crash into blocks and complete increasingly challenging levels with the help of some power-ups. Made with the Godot Engine 3.1.
 
 This game has been finished and released on [Itch.io](https://plaincrown.itch.io/), [Game Jolt](https://gamejolt.com/@PlainCrown/games), and [Kartridge](https://www.kartridge.com/profiles/PlainCrown/developed-games).
 
