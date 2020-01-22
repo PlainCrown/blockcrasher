@@ -98,7 +98,7 @@ func load_config() -> void:
 	paddle_color = config.get_value("paddle", "paddle_color")
 
 
-func save_data():
+func save_data() -> void:
 	"""Creates a save file."""
 	var save_file := File.new()
 	var err := save_file.open(save_path, File.WRITE)
@@ -111,7 +111,7 @@ func save_data():
 	save_file.close()
 
 
-func load_data():
+func load_data() -> void:
 	"""Loads the save file."""
 	var save_file := File.new()
 	var err := save_file.open(save_path, File.READ)
@@ -147,8 +147,7 @@ func load_data():
 			27: true,
 			28: true,
 			29: true,
-			30: true
-			}
+			30: true}
 		print("Error while loading save file. Default settings loaded.")
 		return
 	"""Sets level menu values to the values stored in the save file."""

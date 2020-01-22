@@ -29,7 +29,7 @@ func _on_MusicSlider_value_changed(value: int) -> void:
 func _on_SFXSlider_value_changed(value: int) -> void:
 	"""Changes the sound effect volume."""
 	Autoload.sfx_volume = value
-	audio_player.volume_db = value
+	audio_player.volume_db = Autoload.sfx_volume
 	if not playing:
 		playing = true
 		audio_player.play()

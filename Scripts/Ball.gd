@@ -102,7 +102,7 @@ func _physics_process(delta: float) -> void:
 	"""Checks if there is only one ball when a ball drops off-screen."""
 	if position.y < 0 or position.y > 920:
 		if get_tree().get_nodes_in_group("Ball").size() == 1:
-			"""Asks the player to restart the game, freezes all moving objects and plays the ball 
+			"""Tells the player to restart the game, freezes all moving objects and plays the ball 
 			drop sound effect."""
 			if not pressed:
 				UI.reset_request_function()
